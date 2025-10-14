@@ -1,22 +1,39 @@
-import { Routes, Route } from "react-router-dom";
+// src/App.jsx
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Components
 import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+// Pages
 import Home from "./pages/Home";
+import About from "./pages/About";
+import Skills from "./pages/Skills";
+import Hobby from "./pages/Hobby";
+import Contact from "./pages/Contact";
 
 function App() {
   return (
-    <div className="bg-sky-200 min-h-screen">
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Navbar />
-              <Home />
-            </>
-          }
-        />
-      </Routes>
-    </div>
+    <Router>
+      <div className="min-h-screen flex flex-col">
+        <Navbar />
+
+        {/* Konten Utama */}
+        <main className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/hobby" element={<Hobby />} />
+            <Route path="/contact" element={<Contact />} />
+            {/* Opsi: Tambahkan rute 404 Not Found */}
+          </Routes>
+        </main>
+
+        <Footer />
+      </div>
+    </Router>
   );
 }
 
