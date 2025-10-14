@@ -1,7 +1,21 @@
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+
 function App() {
   return (
-    <div>
-      <h1 className="text-red-500">Hello, World!</h1>
+    <div className="bg-sky-200 min-h-screen">
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Navbar />
+              <Home />
+            </>
+          }
+        />
+      </Routes>
     </div>
   );
 }
