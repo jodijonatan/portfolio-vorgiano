@@ -12,6 +12,7 @@ import About from "./pages/About";
 import Skills from "./pages/Skills";
 import Hobby from "./pages/Hobby";
 import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -27,7 +28,8 @@ function App() {
             <Route path="/skills" element={<Skills />} />
             <Route path="/hobby" element={<Hobby />} />
             <Route path="/contact" element={<Contact />} />
-            {/* Opsi: Tambahkan rute 404 Not Found */}
+
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
 
